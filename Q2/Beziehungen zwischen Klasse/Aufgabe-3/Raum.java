@@ -11,10 +11,4 @@ public class Raum {
     public String raumDetails() {
         return "Raum: " + name + ", Größe: " + groesse + " m²";
     }
-
-    // Getter der Groesse
-    public int getGroesse() { return groesse; }
-
-    // Getter des Namens
-    public String getName() { return name; }
 }
