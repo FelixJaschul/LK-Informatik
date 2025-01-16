@@ -7,7 +7,6 @@ public class Raum {
         this.name = name;
         this.groesse = groesse;
     }
-    //
 
     public String raumDetails() {
         return "Raum: " + name + ", Größe: " + groesse + " m²";
