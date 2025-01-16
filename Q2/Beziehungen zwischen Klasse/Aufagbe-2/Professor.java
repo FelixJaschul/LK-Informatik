@@ -8,6 +8,8 @@ public class Professor {
         this.fachgebiet = fachgebiet;
     }
 
+    // Hallo
+
     // Getter für Name
     public String getName() {
         return name;
