@@ -17,7 +17,7 @@ public class Haus {
 
     public static void main(Strng[] ars) {
         // Haus Objekt erstellen
-        Haus haus = new Haus("Entenstraße 123", "Wohnzimme", 25);
+        Haus haus = new Haus("Entenstraße 123", "Wohnzimmer", 25);
 
         // Ausgabe der Details des Hauses
         haus.hausDetails();
