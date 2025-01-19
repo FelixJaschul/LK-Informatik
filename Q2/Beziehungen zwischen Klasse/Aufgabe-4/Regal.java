@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Regal {
-    private List<Buch> buecher = new ArrayList<>();
+    private final List<Buch> buecher = new ArrayList<>();
 
-    public void hinzufuegenBuecher(nameBuch) {
-        buecher.add(nameBuch)
+    public void hinzufuegenBuecher(Buch buch) {
+        buecher.add(buch);
     }
 
     // Getter

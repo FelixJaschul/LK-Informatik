@@ -1,34 +1,44 @@
 public class Bibliothek {
-    private String name;
-    private Regal regal;
+    private static String name;
+    private static Regal regal;
 
     // Konstruktor
     public Bibliothek(String name, Regal regal) {
-        this.name = name;
-        this.regal = regal;
+        Bibliothek.name = name;
+        Bibliothek.regal = regal;
     }
 
     public String bibDetails() {
-        return Bibliothek.getName() + " " + Bibliothek.getRegal();
+        StringBuilder details = new StringBuilder();
+        details.append("Bibliothek: ").append(name).append("\n");
+        details.append("Bücher im Regal:\n");
+        for (Buch buch : regal.getBuecher()) {
+            details.append("- ").append(buch.getTitel())
+                    .append(" (").append(buch.getDatum())
+                    .append(") von ").append(buch.getAutor().getName())
+                    .append("\n");
+        }
+        return details.toString();
     }
 
-    // Getter
-    public String getName() {
-        return name;
-    }
-
-    public Regal getRegal() {
-        return regal;
-    }
-
+    // Main-Methode
     public static void main(String[] args) {
-        Bibliothek bib = new Bibliothek("Grand Bibliothek", regal);
+        // Regal erstellen
         Regal regal = new Regal();
-        Buch buch = new Buch("Dune", "18.01.2025", autor);
+
+        // Buch erstellen (Dune)
         Autor autor = new Autor("Maximilian Schmidt");
+        Buch Dune = new Buch("Dune", "18.01.2025", autor);
 
-        System.out.prinln(bib.bibDetails());
+        // Buch erstellen (Dune 2) - selber Autor
+        Buch Dune2 = new Buch("Dune 2", "28.01.2025", autor);
 
+        // Buch zum Regal hinzufügen
+        regal.hinzufuegenBuecher(Dune);
+        regal.hinzufuegenBuecher(Dune2);
+        Bibliothek bib = new Bibliothek("Grand Bibliothek", regal);
 
+        // Bibliotheksdetails ausgeben
+        System.out.println(bib.bibDetails());
     }
 }
